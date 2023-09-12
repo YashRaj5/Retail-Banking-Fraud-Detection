@@ -42,15 +42,15 @@ AS
 
 -- DBTITLE 1,reference table
 CREATE INCREMENTAL LIVE TABLE country_coordinates
-AS
-  SELECT * FROM cloud_files("/tmp/fsi/fraud-detection/country_codes", "csv")
+AS 
+  SELECT * FROM cloud_files("/tmp/fsi/fraud-detection/country_code", "csv")
 
 -- COMMAND ----------
 
 -- DBTITLE 1,Fraud report (labels for ML traiing)
 CREATE INCREMENTAL LIVE TABLE fraud_reports
-AS
-  SELECT * FROM cloud_files("/dbdemos/fsi/fraud-detection/fraud_report", "csv")
+AS 
+  SELECT * FROM cloud_files("/tmp/fsi/fraud-detection/fraud_report", "csv")
 
 -- COMMAND ----------
 
